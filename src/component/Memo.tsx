@@ -4,20 +4,22 @@ import Category from './Category'
 import DeleteButton from './DeleteButton';
 import FavoriteButton from './Favorite';
 import { useDispatch } from 'react-redux';
-import { addMemo, deleteMemo } from '../stores/memoList';
+import { addMemo, deleteMemo, favoriteMemo} from '../stores/memoList';
+
 
 function Memo(props:{memo:MemoType}) {
   const {text,category,favorite,created_dt,id} =props.memo
+  const dispatch = useDispatch();
   const date = `${created_dt.getFullYear()} / ${created_dt.getMonth()+1} / ${created_dt.getDate()} / ${created_dt.getHours()} : ${created_dt.getMinutes()}`
   const Delete = () =>{
     console.log('delete')
   }
   const Favorite = () =>{
-    console.log('favo')
+    dispatch(favoriteMemo({id, favorite:!favorite}))
   } 
-
-  const dispatch = useDispatch();
   
+  
+
   return (
     <div className='Memo'>
       <div className='header'>

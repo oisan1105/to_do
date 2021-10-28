@@ -7,7 +7,7 @@ function FavoriteButton (props:{Favorite:React.MouseEventHandler<HTMLButtonEleme
   const isFavorite = props.isFavorite
   return (
     <button className='FavoriteButton' onClick={Favorite}> 
-      {isFavorite?'♥':'♡'}
+      {isFavorite?'💗':'💙'}
     </button>
   );
 }

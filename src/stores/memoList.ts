@@ -22,7 +22,16 @@ const remove: CaseReducer<MemoType[], PayloadAction<string>> = (state, action) =
   return result;
 }
 
-
+const favorite: CaseReducer<MemoType[], PayloadAction<{id:string, favorite:boolean}>> = (state, action) => {
+  const {id, favorite} = action.payload ;
+  const targetMemoIndex = state.findIndex((memo) => memo.id === id) ;
+  if(targetMemoIndex === -1){
+    return state
+    }
+  
+  state[targetMemoIndex].favorite = favorite;
+  return state;
+  }
 
 // Sliceを生成する
 const slice = createSlice({
@@ -31,8 +40,10 @@ const slice = createSlice({
   reducers: {
     addMemo:add,
     
-    deleteMemo:remove
+    deleteMemo:remove,
     // etc...
+
+    favoriteMemo:favorite
   }
 });
 
@@ -40,4 +51,4 @@ const slice = createSlice({
 export default slice.reducer;
 
 // Action Creatorsをエクスポートする
-export const {addMemo, deleteMemo } = slice.actions;
+export const {addMemo, deleteMemo, favoriteMemo} = slice.actions;
