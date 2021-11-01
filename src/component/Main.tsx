@@ -2,9 +2,11 @@ import React from 'react';
 import Memo from './Memo';
 import {MemoType} from '../type/Memo';
 import { useSelector } from '../stores/index'
+import useSortedMemoList from '../hooks/useSortedMemoList';
 
 function Main() {
-  const MemoList = useSelector(state => state.memoList);
+  const MemoList = useSortedMemoList();
+
   
   console.log(MemoList)
   return (
