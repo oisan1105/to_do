@@ -9,6 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      CI: false
+
     steps:
       - uses: actions/checkout@v2
 
@@ -30,12 +33,7 @@ jobs:
       - name: install
         run: npm install --frozen-lockfile
       
-      - run:
-          name: build
-          command: |
-            export CI=false
-            npm run build
-            export CI=true 
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
