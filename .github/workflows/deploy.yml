@@ -31,11 +31,11 @@ jobs:
         run: npm install --frozen-lockfile
       
       - run:
-        name: build
-        command: |
-          export CI=false
-          npm run build
-          export CI=true 
+          name: build
+          command: |
+            export CI=false
+            npm run build
+            export CI=true 
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
