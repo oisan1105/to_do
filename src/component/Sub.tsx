@@ -4,8 +4,7 @@ import RealTime from './RealTime';
 
 function Sub() {
   return (
-    <div>
-      ====================
+    <div className='Sub'> 
       <RealTime />
     </div>
     );

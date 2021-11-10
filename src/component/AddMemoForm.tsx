@@ -39,17 +39,23 @@ const Add = (data: FormData) =>{
   console.log(data);
 }
   return (
-    <form onSubmit={handleSubmit(Add)}>
-      <textarea {...register("text", { required: true })} />
-      <select {...register('category',{ required: true})}>
-        {CategoryList.map((category,i) => <option key={i} value={category}>{category}</option>)}
-      </select>
-      <button onClick={Close}>
-        close
-      </button>
-      <button>
-        Add
-      </button>
+    <form onSubmit={handleSubmit(Add)} className='MemoForm'>
+      <div>
+        <textarea {...register("text", { required: true })} />
+      </div>
+      <div>
+        <select {...register('category', { required: true })}>
+          {CategoryList.map((category, i) => <option key={i} value={category}>{category}</option>)}
+        </select>
+      </div>
+      <div className='ButtonGroup'>
+        <button onClick={Close} className='CloseButton'>
+          戻る
+        </button>
+        <button className='AddMemoButton'>
+          メモ
+        </button>
+      </div>
     </form>
     );
 }
