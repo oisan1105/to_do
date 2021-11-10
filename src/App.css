@@ -1,4 +1,5 @@
 div.App{
+  background-color: white;
   display: flex;
   height: 100vh
 }
@@ -23,13 +24,22 @@ div.container.sub{
 
 }
 
+div.Sub{
+  padding: 16px;
+}
+
 div.Main{
+ 
   padding: 40px 24px;
 }
 
 div.Memo{
-  background-color: #C0C0C0;
+  border-radius: 16px;
+  border:solid 2px darkcyan;
+  border-color: darkcyan;
+  background-color: white;
   padding: 24px;
+  margin-bottom: 8px;
 }
 
 div.Memo .header{
@@ -52,9 +62,12 @@ div.Memo .date{
 }
 
 div.Category{
-  border: solid 1px black;
+  background-color: darkcyan;
+  font-weight: bold;
+  color: white;
+  border: none;
   border-radius: 6px;
-  padding: 1px 8px;
+  padding: 4px 8px;
 }
 
 button.DeleteButton{
@@ -70,6 +83,9 @@ button.FavoriteButton{
 }
 
 button.AddButton{
+  border: solid 4px darkslategray;
+  background-color: darkcyan;
+  color: white;
   border-radius: 50%;
   line-height: 100px;
   width: 100px;
@@ -77,3 +93,41 @@ button.AddButton{
   padding: 0;
   font-size: 56px;
 }
+
+div.RealTime{
+  font-size: 24px;
+  border-radius: 6px;
+  padding: 16px 24px;
+  color: white;
+  background-color: darkcyan;
+}
+
+form.MemoForm textarea{
+  resize: none;
+  border-radius: 6px;
+  width: 809px;
+  height: 500px;
+  border: solid 2px darkcyan;
+
+}
+form.MemoForm div.ButtonGroup{
+  text-align: right;
+}
+
+form.MemoForm button.CloseButton{
+  border-radius: 6px;
+  color: white;
+  width: 60px;
+  height: 30px;
+  border: none;
+  background-color: darkcyan;
+}
+
+form.MemoForm button.AddMemoButton{
+  border-radius: 6px;
+  color: white;
+  width: 60px;
+  height: 30px;
+  border: none;
+  background-color: darkcyan;
+  }
